@@ -1,53 +1,92 @@
-# Getting Started with Create React App
+# 🎹 Harmony Keys - Virtual Piano
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, responsive virtual piano web application built with React and the Web Audio API. Play music using your computer keyboard, mouse, or touch screen.
 
-## Available Scripts
+![Harmony Keys Screenshot](https://via.placeholder.com/800x500/282c34/ffffff?text=Harmony+Keys+Virtual+Piano)
+
+## 🎹 Features
+
+- 🎵 Play piano using your computer keyboard, mouse, or touch screen
+- 🎹 Full 7-octave range (C0 to B6)
+- 🎚️ Adjustable volume and octave controls
+- 🎛️ Multiple waveform types (sine, square, sawtooth, triangle)
+- 🎹 Realistic piano key press animations
+- 🎵 Sustain pedal functionality
+- 📱 Fully responsive design that works on all devices
+- ⌨️ Comprehensive keyboard shortcuts
+- 🎨 Clean, modern UI with smooth animations
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm (v6 or later) or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/harmony-keys.git
+   cd harmony-keys
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## 🎹 How to Play
+
+### Computer Keyboard
+- **White Keys**: A, S, D, F, G, H, J, K, L, ;, '
+- **Black Keys**: W, E, T, Y, U, O, P, [
+- **Octave Up/Down**: Z/X
+- **Sustain Pedal**: S
+- **Change Waveform**: 1-4 (1=Sine, 2=Square, 3=Sawtooth, 4=Triangle)
+- **Volume Up/Down**: Arrow Up/Down
+- **Show Help**: ?
+
+### Mouse/Touch
+- Click or tap the keys to play notes
+- Use the on-screen controls to adjust settings
+
+## 🛠️ Built With
+
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - For generating and processing audio
+- [Bootstrap 5](https://getbootstrap.com/) - For responsive layout and components
+- [Font Awesome](https://fontawesome.com/) - For icons
+
+## 📦 Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- `npm start` - Runs the app in development mode
+- `npm run build` - Builds the app for production to the `build` folder
+- `npm test` - Launches the test runner
+- `npm run deploy` - Deploys the app to GitHub Pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📝 License
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### `npm test`
+## 🙏 Acknowledgments
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Inspired by various virtual piano applications
+- Built with ❤️ using Create React App
+- Special thanks to the Web Audio API team for making this possible
 
 ### Analyzing the Bundle Size
 

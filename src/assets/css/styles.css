@@ -1,0 +1,505 @@
+/* Global Styles */
+:root {
+  --white-key-width: 40px;
+  --white-key-height: 200px;
+  --black-key-width: 24px;
+  --black-key-height: 120px;
+  --key-border-radius: 0 0 6px 6px;
+  --key-active-color: #ff5252;
+  --white-key-color: #ffebee;
+  --black-key-color: #b71c1c;
+  --key-shadow: 0 2px 4px rgba(183, 28, 28, 0.2);
+  --key-active-shadow: 0 1px 2px rgba(183, 28, 28, 0.3);
+  
+  /* Red color palette */
+  --light-red: #ffebee;
+  --medium-red: #ef5350;
+  --dark-red: #b71c1c;
+  
+  /* Glassmorphism properties */
+  --glass-bg: rgba(255, 235, 238, 0.7);
+  --glass-border: rgba(239, 83, 80, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(183, 28, 28, 0.1);
+  --glass-blur: 10px;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--dark-red);
+  padding: 1rem 0;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--dark-red);
+}
+
+main {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+/* Piano Styles */
+.piano-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.piano {
+  position: relative;
+  height: var(--white-key-height);
+  margin: 0 auto;
+  width: max-content;
+  min-width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Piano Key Styles */
+.piano-key {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s ease;
+  box-sizing: border-box;
+  border: 1px solid var(--glass-border);
+}
+
+.piano-key:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 83, 80, 0.5);
+}
+
+/* White Key */
+.white-key {
+  width: var(--white-key-width);
+  height: var(--white-key-height);
+  background: var(--white-key-color);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 0 0 var(--key-border-radius);
+  box-shadow: var(--key-shadow);
+  z-index: 1;
+}
+
+.white-key.active {
+  background: linear-gradient(to bottom, #ffcdd2, #ef9a9a);
+  box-shadow: var(--key-active-shadow);
+  transform: translateY(2px);
+}
+
+/* Black Key */
+.black-key {
+  width: var(--black-key-width);
+  height: var(--black-key-height);
+  background: linear-gradient(to bottom, var(--dark-red), #880e0e);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+  color: white;
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(183, 28, 28, 0.3);
+}
+
+.black-key.active {
+  background: linear-gradient(to bottom, #880e0e, #4a0000);
+  box-shadow: 1px 1px 2px rgba(183, 28, 28, 0.4);
+  transform: translateY(1px);
+}
+
+/* Key Labels */
+.key-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--dark-red);
+  pointer-events: none;
+}
+
+.white-key.active .key-label {
+  color: #4a0000;
+}
+
+.octave-number {
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  color: var(--medium-red);
+}
+
+.black-key-label {
+  font-size: 0.7rem;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+/* Controls */
+.controls {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.control-group {
+  margin-bottom: 1rem;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-group label {
+  color: var(--dark-red);
+  font-weight: 500;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--medium-red);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--medium-red);
+}
+
+.form-select {
+  background-color: var(--light-red);
+  border-color: var(--glass-border);
+  color: var(--dark-red);
+}
+
+.form-select:focus {
+  border-color: var(--medium-red);
+  box-shadow: 0 0 0 0.25rem rgba(239, 83, 80, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--medium-red);
+  border-color: var(--medium-red);
+}
+
+.btn-outline-secondary {
+  color: var(--dark-red);
+  border-color: var(--glass-border);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--light-red);
+  color: var(--dark-red);
+}
+
+.btn-outline-info {
+  color: var(--dark-red);
+  border-color: var(--glass-border);
+}
+
+.btn-outline-info:hover {
+  background-color: var(--light-red);
+  color: var(--dark-red);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .piano {
+    padding: 0.8rem;
+  }
+  
+  .controls {
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --white-key-width: 30px;
+    --white-key-height: 160px;
+    --black-key-width: 18px;
+    --black-key-height: 100px;
+    --glass-blur: 8px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .key-label, .black-key-label {
+    font-size: 0.6rem;
+  }
+  
+  .octave-number {
+    font-size: 0.55rem;
+  }
+  
+  .piano {
+    padding: 0.6rem;
+  }
+  
+  .controls {
+    padding: 1rem;
+    margin-top: 1.2rem;
+  }
+  
+  .control-group {
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Adjust modal for mobile */
+  .keyboard-shortcuts-modal .modal-body {
+    max-height: 50vh;
+  }
+  
+  .keyboard-shortcuts-modal kbd {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --white-key-width: 26px;
+    --white-key-height: 150px;
+    --black-key-width: 16px;
+    --black-key-height: 90px;
+    --glass-blur: 7px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .piano {
+    padding: 0.5rem;
+  }
+  
+  .key-label, .black-key-label {
+    font-size: 0.55rem;
+  }
+  
+  .octave-number {
+    font-size: 0.5rem;
+  }
+  
+  .controls {
+    padding: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .control-group {
+    margin-bottom: 0.7rem;
+  }
+  
+  /* Further adjust modal for smaller screens */
+  .keyboard-shortcuts-modal .modal-body {
+    max-height: 45vh;
+    font-size: 0.9rem;
+  }
+  
+  .keyboard-shortcuts-modal kbd {
+    font-size: 0.7em;
+    padding: 0.15em 0.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --white-key-width: 24px;
+    --white-key-height: 140px;
+    --black-key-width: 14px;
+    --black-key-height: 80px;
+    --glass-blur: 6px;
+  }
+  
+  .piano {
+    padding: 0.4rem;
+  }
+  
+  .key-label, .black-key-label {
+    font-size: 0.5rem;
+  }
+  
+  .octave-number {
+    display: none;
+  }
+  
+  .controls {
+    padding: 0.7rem;
+    margin-top: 0.8rem;
+  }
+  
+  .control-group {
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Adjust buttons for smaller screens */
+  .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Final modal adjustments for very small screens */
+  .keyboard-shortcuts-modal .modal-body {
+    max-height: 40vh;
+    font-size: 0.85rem;
+  }
+  
+  .keyboard-shortcuts-modal .modal-header h5 {
+    font-size: 1.1rem;
+  }
+  
+  .keyboard-shortcuts-modal .btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Keyboard Shortcuts Modal */
+.keyboard-shortcuts-modal .modal-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.keyboard-shortcuts-modal .modal-header {
+  background: linear-gradient(to right, var(--medium-red), var(--dark-red));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.keyboard-shortcuts-modal .modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  color: var(--dark-red);
+}
+
+.keyboard-shortcuts-modal table {
+  margin-bottom: 1rem;
+}
+
+.keyboard-shortcuts-modal kbd {
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  color: #fff;
+  background-color: var(--medium-red);
+  border-radius: 0.2rem;
+  box-shadow: 0 1px 1px rgba(183, 28, 28, 0.2);
+  white-space: nowrap;
+}
+
+.keyboard-shortcuts-modal .btn-primary {
+  background-color: var(--medium-red);
+  border-color: var(--medium-red);
+}
+
+.keyboard-shortcuts-modal .btn-primary:hover {
+  background-color: var(--dark-red);
+  border-color: var(--dark-red);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-top: none;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--dark-red);
+}
+
+/* Focus styles for better accessibility */
+:focus-visible {
+  outline: 2px solid var(--medium-red);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medium-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-red);
+}
