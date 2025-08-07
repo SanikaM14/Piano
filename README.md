@@ -4,7 +4,7 @@ A beautiful, responsive virtual piano web application built with React and the W
 
 ![Harmony Keys Screenshot](https://via.placeholder.com/800x500/282c34/ffffff?text=Harmony+Keys+Virtual+Piano)
 
-## 🎹 Features
+## Features
 
 - 🎵 Play piano using your computer keyboard, mouse, or touch screen
 - 🎹 Full 7-octave range (C0 to B6)
@@ -16,7 +16,7 @@ A beautiful, responsive virtual piano web application built with React and the W
 - ⌨️ Comprehensive keyboard shortcuts
 - 🎨 Clean, modern UI with smooth animations
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -49,27 +49,18 @@ A beautiful, responsive virtual piano web application built with React and the W
 
 ## 🎹 How to Play
 
-### Computer Keyboard
-- **White Keys**: A, S, D, F, G, H, J, K, L, ;, '
-- **Black Keys**: W, E, T, Y, U, O, P, [
-- **Octave Up/Down**: Z/X
-- **Sustain Pedal**: S
-- **Change Waveform**: 1-4 (1=Sine, 2=Square, 3=Sawtooth, 4=Triangle)
-- **Volume Up/Down**: Arrow Up/Down
-- **Show Help**: ?
-
 ### Mouse/Touch
 - Click or tap the keys to play notes
 - Use the on-screen controls to adjust settings
 
-## 🛠️ Built With
+## 🛠 Built With
 
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - For generating and processing audio
 - [Bootstrap 5](https://getbootstrap.com/) - For responsive layout and components
 - [Font Awesome](https://fontawesome.com/) - For icons
 
-## 📦 Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -79,7 +70,7 @@ In the project directory, you can run:
 - `npm run deploy` - Deploys the app to GitHub Pages
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by various virtual piano applications
 - Built with ❤️ using Create React App
