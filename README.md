@@ -78,9 +78,6 @@ In the project directory, you can run:
 - `npm test` - Launches the test runner
 - `npm run deploy` - Deploys the app to GitHub Pages
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
